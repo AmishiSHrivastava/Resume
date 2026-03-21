@@ -408,8 +408,8 @@ span {
 
 /* --- SKILLS SECTION --- */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
 }
 
@@ -448,30 +448,39 @@ span {
     gap: 1rem;
 }
 
-.skill-tag {
-    background-color: rgba(59, 130, 246, 0.1);
-    border: 0.1rem solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 1rem 1.8rem;
-    border-radius: 5rem;
-    font-size: 1.4rem;
-    font-weight: 500;
+.skill-item {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-left: 0.5rem solid var(--accent-color);
     transition: all 0.3s ease;
-    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.skill-item:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(59, 130, 246, 0.15);
+}
+
+.skill-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.skill-tag i {
-    font-size: 1.2rem;
+.skill-name i {
+    font-size: 1.4rem;
     color: var(--accent-color);
 }
 
-.skill-tag:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    transform: scale(1.05);
+.skill-desc {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* --- CONTACT SECTION --- */
